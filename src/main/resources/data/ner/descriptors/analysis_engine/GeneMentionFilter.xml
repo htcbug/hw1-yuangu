@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>ner.AnalysisEngine.GeneMentionFilter</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Gene Mention Filter</name>
+    <description>GeneMentionFilter is responsible for filter annotations with low confidence.</description>
+    <version>1.0</version>
+    <vendor>The Apache Software Foundation</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>ConfidenceThreshold</name>
+        <description>Threshold to filter gene mention annotations. Annotations with lower confidence than this value will be filtered out.</description>
+        <type>Float</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>FilteringRegularExpressions</name>
+        <description>Regular expressions to filter out gene mentions.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>ConfidenceThreshold</name>
+        <value>
+          <float>0.6</float>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../type_system/BaseAnnotation.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">ner.TypeSystem.BaseAnnotation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">ner.BaseAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

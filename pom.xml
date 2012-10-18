@@ -104,9 +104,22 @@
       <artifactId>stanford-postag-models</artifactId>
       <version>1.3.2</version>
     </dependency>
+    <dependency>
+    	<groupId>com.aliasi</groupId>
+    	<artifactId>lingpipe</artifactId>
+    </dependency>
   </dependencies>
   <scm>
   	<connection>scm:git:git@github.com:htcbug/hw1-yuangu.git</connection>
   	<developerConnection>scm:git:git@github.com:htcbug/hw1-yuangu.git</developerConnection>
   </scm>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>com.aliasi</groupId>
+  			<artifactId>lingpipe</artifactId>
+  			<version>4.1.0</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>

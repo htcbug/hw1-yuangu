@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>ner.AnalysisEngine.GeneLingPipeAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>Gene Stanford NLP Annotator</name>
+    <description>A LingPipe package based annotator for Gene Mention</description>
+    <version>1.0</version>
+    <vendor>The Apache Software Foundation</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>BestChunkNumber</name>
+        <description>Number of Best Chunks, used by LingPipe ConfidenceAnnotator</description>
+        <type>Integer</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>BestChunkNumber</name>
+        <value>
+          <integer>10</integer>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../type_system/BaseAnnotation.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">ner.BaseAnnotation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <externalResourceDependencies>
+    <externalResourceDependency>
+      <key>LingPipeGeneTagModel</key>
+      <description>The trained gene tag model for LingPipe package.</description>
+      <optional>false</optional>
+    </externalResourceDependency>
+  </externalResourceDependencies>
+  <resourceManagerConfiguration>
+    <externalResources>
+      <externalResource>
+        <name>LingPipeGeneTagModelFile</name>
+        <description>The model file for LingPipe NE Gene Tag recognizer.</description>
+        <fileResourceSpecifier>
+          <fileUrl>file:data/ner/resources/ne-en-bio-genetag.HmmChunker</fileUrl>
+        </fileResourceSpecifier>
+      </externalResource>
+    </externalResources>
+    <externalResourceBindings>
+      <externalResourceBinding>
+        <key>LingPipeGeneTagModel</key>
+        <resourceName>LingPipeGeneTagModelFile</resourceName>
+      </externalResourceBinding>
+    </externalResourceBindings>
+  </resourceManagerConfiguration>
+</analysisEngineDescription>

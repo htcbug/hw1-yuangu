@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>SourceSentenceInformation</name>
+  <description>Source Sentence Information for Named Entity Recognition - store some meta information about each line of the input file.</description>
+  <version>1.0</version>
+  <vendor>The Apache Software Foundation</vendor>
+  <types>
+    <typeDescription>
+      <name>ner.TypeSystem.SourceSentenceInformation</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>identifier</name>
+          <description>identifier represents the identifier of the input sentence</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
