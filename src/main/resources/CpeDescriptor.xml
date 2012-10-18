@@ -86,7 +86,7 @@
       <checkpoint batch="10000"/>
     </casProcessor>
 
-    <casProcessor deployment="integrated" name="Annotation Evaluator">
+    <!--casProcessor deployment="integrated" name="Annotation Evaluator">
       <descriptor>
         <import location="./data/ner/descriptors/cas_consumer/AnnotationEvaluator.xml"/>
       </descriptor>
@@ -98,7 +98,7 @@
         <timeout max="10000"/>
       </errorHandling>
       <checkpoint batch="10000"/>
-    </casProcessor>
+    </casProcessor-->
 
     <casProcessor deployment="integrated" name="Annotation Printer">
       <descriptor>
